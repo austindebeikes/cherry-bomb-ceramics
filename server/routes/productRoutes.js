@@ -26,4 +26,16 @@ router.post('/', async (req, res) => {
     }
 });
 
+// @desc    Delete all products
+// @route   DELETE /api/products
+router.delete('/', async (req, res) => {
+    try {
+        await Product.deleteMany({});
+        res.json({ message: 'All products have been deleted' });
+    } catch (err) {
+        res.status(500).json({ message: err.message });
+    }
+});
+
+
 module.exports = router;
