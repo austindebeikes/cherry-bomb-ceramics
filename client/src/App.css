@@ -1,38 +1,60 @@
-.App {
-  text-align: center;
+/* app.css */
+
+body {
+  font-family: 'Poppins', sans-serif; /* Set the body font */
+  background-color: #FFB6C1; /* Set a light pink background color */
+  color: #333333; /* Set the text color */
+  margin: 0;
+  padding: 0;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* Center the welcome message */
+h1 {
+  text-align: center; /* Center the welcome text */
+  font-family: 'Playfair Display', serif; /* Set headings font */
+  color: #FF69B4; /* Set heading color */
+  margin-top: 20px; /* Add some top margin */
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* Gallery container styles */
+.gallery {
+  display: flex; /* Use flexbox for layout */
+  flex-wrap: wrap; /* Allow items to wrap to the next line */
+  justify-content: center; /* Center the items */
+  margin: 20px; /* Add margin around the gallery */
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+/* Individual gallery item styles */
+.gallery-item {
+  margin: 15px; /* Space between items */
+  border: 2px solid #FF69B4; /* Add a border with primary color */
+  border-radius: 10px; /* Rounded corners */
+  overflow: hidden; /* Hide overflow */
+  transition: transform 0.3s; /* Smooth transition effect */
+  width: 200px; /* Fixed width for gallery items */
+  text-align: center; /* Center text in each item */
 }
 
-.App-link {
-  color: #61dafb;
+.gallery-item img {
+  width: 100%; /* Make images responsive */
+  height: auto; /* Maintain aspect ratio */
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Hover effect for gallery items */
+.gallery-item:hover {
+  transform: scale(1.05); /* Scale up on hover */
+}
+
+/* Example for buttons */
+button {
+  background-color: #FF69B4; /* Button background color */
+  color: white; /* Button text color */
+  border: none; /* Remove border */
+  padding: 10px 20px; /* Button padding */
+  border-radius: 5px; /* Rounded corners */
+  cursor: pointer; /* Change cursor on hover */
+}
+
+button:hover {
+  background-color: #FF7F50; /* Change color on hover */
 }
