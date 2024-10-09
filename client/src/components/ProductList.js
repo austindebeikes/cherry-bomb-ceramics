@@ -2,8 +2,9 @@
 
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import '../App.css';
 
-const ProductList = ({ addToCart }) => {
+const ProductList = () => {
     const [products, setProducts] = useState([]);
 
     useEffect(() => {
@@ -16,16 +17,18 @@ const ProductList = ({ addToCart }) => {
 
     return (
         <div>
-            <h1>Ceramic Products</h1>
-            <ul>
+            <h1 className="centered-header">
+                Explore
+            </h1>
+            <div className="gallery">
                 {products.map(product => (
                     <div className="gallery-item" key={product._id}>
                         <img src={product.imageUrl} alt={product.title} />
                         <h2>{product.title}</h2>
                         <p>{product.description}</p>
                         <p>Price: ${product.price.toFixed(2)}</p>
-                        <img src={product.imageUrl} alt={product.title} style={{ width: '100px', height: '100px' }} />
-                    </li>
+                        <button>Add to Cart</button>
+                    </div>
                 ))}
             </div>
         </div>
