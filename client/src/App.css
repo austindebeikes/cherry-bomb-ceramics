@@ -1,38 +1,114 @@
-.App {
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #F5F5DC; /* A soft beige color for a neutral background */
+  color: #333333; 
+  margin: 0;
+  padding: 0;
+}
+
+/* Center the welcome message */
+h1 {
   text-align: center;
+  font-family: 'Playfair Display', serif; 
+  color: #6B4F4F; /* Dark earthy red */
+  margin-top: 20px; 
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* Gallery container styles */
+.gallery {
+  display: flex; 
+  flex-wrap: wrap; 
+  justify-content: center; 
+  margin: 20px; 
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* Individual gallery item styles */
+.gallery-item {
+  margin: 15px; 
+  border: 2px solid #6B4F4F; 
+  border-radius: 10px; 
+  overflow: hidden; 
+  transition: transform 0.3s; 
+  width: 200px; 
+  text-align: center; 
+  background-color: #FFFFFF; /* White background for items */
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* Responsive image styling */
+.gallery-item img {
+  width: 100%; 
+  height: auto; 
+}
+
+/* Hover effect for gallery items */
+.gallery-item:hover {
+  transform: scale(1.05); 
+}
+
+/* Welcome section */
+.welcome-section {
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  background-color: #E7D4C8; /* Soft blush background */
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 20px;
 }
 
-.App-link {
-  color: #61dafb;
+.welcome-text {
+  font-family: 'Dancing Script', cursive; 
+  font-size: 2.5rem; 
+  color: #6B4F4F; 
+  margin: 0 15px; 
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.cherry-image {
+  width: 78px; /* Set width for the cherry images */
+  height: 50px;
+  border-radius: 50%; /* Round shape */
+  object-fit: cover; /*Ensure the image fits the shape properly */
+}
+
+/* Centered header for product section */
+.centered-header {
+  text-align: center;
+  margin-bottom: 20px;
+  text-decoration: underline; /* Underline the header */
+}
+
+.footer {
+  background-color: #E7D4C8; /* Match the soft blush background */
+  color: #6B4F4F; /* Dark earthy red */
+  text-align: center; /* Center the text */
+  padding: 20px; /* Padding around the footer */
+  position: relative; /* Ensure it stays at the bottom */
+  bottom: 0; /* Align to the bottom */
+  width: 100%; /* Full width */
+  margin-top: 20px; /* Space above the footer */
+}
+
+.footer p {
+  margin: 5px 0; /* Spacing between lines */
+  font-size: 0.9rem; /* Smaller font size */
+}
+
+
+/* Buttons */
+button {
+  background-color: #6B4F4F; /* Dark earthy red for buttons */
+  color: white; 
+  border: none; 
+  padding: 10px 20px; 
+  border-radius: 5px; 
+  cursor: pointer; 
+}
+
+button:hover {
+  background-color: #A0522D; /* Change to a lighter brown on hover */
+}
+
+/* Additional styles for a more polished look */
+.gallery-item {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
 }

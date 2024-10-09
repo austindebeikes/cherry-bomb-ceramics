@@ -57,7 +57,7 @@ mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopol
             .catch(err => console.log(err));
     })
     .catch((err) => console.log(err));
-    
+
 // Routes
 app.get('/', (req, res) => {
     res.send('Welcome to Cherry Bomb Ceramics API!');
