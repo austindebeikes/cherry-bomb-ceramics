@@ -108,6 +108,48 @@ button:hover {
   background-color: #A0522D; /* Change to a lighter brown on hover */
 }
 
+/* src/App.css */
+
+.home-button {
+  display: inline-block;
+  padding: 10px 20px;
+  margin-top: 20px;
+  background-color: #6B4F4F; /* Dark earthy red for buttons */
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.home-button:hover {
+  background-color: #A0522D; /* Change to a lighter brown on hover */
+}
+
+.header-container {
+  display: flex;
+  justify-content: center; /* Center align the header */
+  align-items: center; /* Vertically align items */
+  position: relative; /* For absolute positioning of the button */
+  margin-bottom: 20px; /* Add space below the header */
+}
+
+.go-to-cart-button {
+  position: absolute; /* Positioning it absolutely */
+  right: 20px; /* Add space from the right edge */
+  padding: 5px 10px; /* Smaller padding */
+  background-color: #6B4F4F; /* Dark earthy red for buttons */
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  z-index: 10; /* Ensure it stays above other elements */
+}
+
+.go-to-cart-button:hover {
+  background-color: #A0522D; /* Change to a lighter brown on hover */
+}
+
 /* Additional styles for a more polished look */
 .gallery-item {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */

@@ -1,6 +1,7 @@
 // src/components/Cart.js
 
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Cart = () => {
     const cartItems = JSON.parse(localStorage.getItem('cart')) || [];
@@ -27,6 +28,7 @@ const Cart = () => {
                     <h2>Total: ${calculateTotal()}</h2>
                 </div>
             )}
+            <Link to="/" className="home-button">Products</Link>
         </div>
     );
 };
