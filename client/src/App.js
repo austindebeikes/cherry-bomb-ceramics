@@ -5,6 +5,8 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'; // Ch
 import './App.css';
 import ProductList from './components/ProductList';
 import Cart from './components/Cart'; // Import the Cart component
+import Checkout from './components/Checkout'; // Import Checkout
+
 
 function App() {
   return (
@@ -29,6 +31,7 @@ function App() {
         <Routes> {/* Use Routes instead of Switch */}
           <Route path="/" element={<ProductList />} /> {/* Home route */}
           <Route path="/cart" element={<Cart />} /> {/* Cart route */}
+          <Route path="/checkout" element={<Checkout />} /> {/* Add Checkout route */}
         </Routes>
 
         <footer className="footer">

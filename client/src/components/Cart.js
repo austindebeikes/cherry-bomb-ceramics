@@ -11,9 +11,15 @@ const Cart = () => {
         return cartItems.reduce((total, item) => total + item.price, 0).toFixed(2);
     };
 
+    const handleRemoveItem = (index) => {
+        const updatedCart = cartItems.filter((_, i) => i !== index);
+        localStorage.setItem('cart', JSON.stringify(updatedCart));
+        window.location.reload(); // Reload the page to reflect changes
+    };
+
     return (
         <div className="cart-container">
-            <Link to="/" className="home-button">Products</Link> {/* Add Home button here */}
+            <Link to="/" className="home-button">Home</Link>
             <h1>Your Cart</h1>
             {cartItems.length === 0 ? (
                 <p>Your cart is empty.</p>
@@ -26,6 +32,9 @@ const Cart = () => {
                                 <div className="cart-item-details">
                                     <span className="cart-item-title">{item.title}</span>
                                     <span className="cart-item-price">${item.price.toFixed(2)}</span>
+                                    <button onClick={() => handleRemoveItem(index)} className="remove-button">
+                                        Remove
+                                    </button>
                                 </div>
                             </li>
                         ))}

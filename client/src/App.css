@@ -110,20 +110,28 @@ button:hover {
 
 /* src/App.css */
 
-.home-button {
-  display: inline-block;
-  padding: 10px 20px;
-  margin-top: 20px;
-  background-color: #6B4F4F; /* Dark earthy red for buttons */
-  color: white;
-  text-decoration: none;
-  border-radius: 5px;
-  text-align: center;
+/* src/App.css */
+
+.cart-buttons-container {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
 }
 
-.home-button:hover {
+.home-button, .checkout-button {
+  padding: 10px 20px;
+  background-color: #6B4F4F; /* Dark earthy red for buttons */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none; /* Remove underline */
+}
+
+.home-button:hover, .checkout-button:hover {
   background-color: #A0522D; /* Change to a lighter brown on hover */
 }
+
 
 /* src/App.css */
 
@@ -219,5 +227,88 @@ button:hover {
   text-align: right; /* Align the total to the right */
   font-weight: bold; /* Make the total bold */
   font-size: 1.2em; /* Slightly larger font size for emphasis */
+}
+
+/* src/App.css */
+
+.checkout-container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centering the content */
+}
+
+.checkout-form {
+  display: flex;
+  flex-direction: column;
+  width: 100%; /* Use full width of the container */
+}
+
+.checkout-form label {
+  margin: 15px 0; /* Spacing above and below each label */
+}
+
+.checkout-form input {
+  padding: 8px;
+  margin: 5px 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 100%; /* Make inputs full width */
+}
+
+.submit-button {
+  padding: 10px;
+  background-color: #6B4F4F; /* Dark earthy red for buttons */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.submit-button:hover {
+  background-color: #A0522D; /* Change to a lighter brown on hover */
+}
+
+.checkout-buttons-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+  width: 100%; /* Ensure it uses full width */
+}
+
+.cart-button {
+  padding: 10px;
+  background-color: #6B4F4F; /* Dark earthy red for buttons */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none; /* Remove underline */
+}
+
+.cart-button:hover {
+  background-color: #A0522D; /* Change to a lighter brown on hover */
+}
+
+/* src/App.css */
+
+.remove-button {
+  padding: 5px 10px;
+  background-color: #e57373; /* Light red color */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-left: 10px; /* Spacing from the price */
+}
+
+.remove-button:hover {
+  background-color: #c62828; /* Darker shade on hover */
 }
 
