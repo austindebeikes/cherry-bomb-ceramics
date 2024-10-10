@@ -125,32 +125,99 @@ button:hover {
   background-color: #A0522D; /* Change to a lighter brown on hover */
 }
 
+/* src/App.css */
+
+/* src/App.css */
+
 .header-container {
   display: flex;
-  justify-content: center; /* Center align the header */
-  align-items: center; /* Vertically align items */
-  position: relative; /* For absolute positioning of the button */
-  margin-bottom: 20px; /* Add space below the header */
+  justify-content: space-between; /* Space between header and button */
+  align-items: center; /* Vertically center items */
+  margin-bottom: 20px; /* Add some space below */
+}
+
+.centered-header {
+  flex-grow: 1; /* Allow header to grow to fill available space */
+  text-align: center; /* Center the header text */
+  margin-left: 100px;
 }
 
 .go-to-cart-button {
-  position: absolute; /* Positioning it absolutely */
-  right: 20px; /* Add space from the right edge */
-  padding: 5px 10px; /* Smaller padding */
+  margin-right: 20px; /* Add space from the right */
+  padding: 10px 20px; /* Adjust padding for aesthetics */
   background-color: #6B4F4F; /* Dark earthy red for buttons */
-  color: white;
-  text-decoration: none;
-  border-radius: 5px;
-  border: none;
-  cursor: pointer;
-  z-index: 10; /* Ensure it stays above other elements */
+  color: white; /* Text color */
+  border: none; /* No border */
+  border-radius: 5px; /* Rounded corners */
+  cursor: pointer; /* Pointer on hover */
+  text-decoration: none; /* Remove underline */
 }
 
 .go-to-cart-button:hover {
   background-color: #A0522D; /* Change to a lighter brown on hover */
 }
 
+
+
 /* Additional styles for a more polished look */
 .gallery-item {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
 }
+
+/* src/App.css */
+
+.cart-container {
+  max-width: 600px; /* Limit the width of the cart */
+  margin: auto; /* Center the cart on the page */
+  padding: 20px; /* Add some padding */
+  background-color: #fff; /* Background color for the cart */
+  border-radius: 8px; /* Rounded corners for the cart */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Soft shadow */
+}
+
+.cart-items {
+  margin: 20px 0;
+}
+
+.cart-item {
+  display: flex;
+  align-items: center;
+  background-color: #f9f9f9; /* Light background for items */
+  border: 1px solid #ddd; /* Border for separation */
+  border-radius: 8px; /* Rounded corners */
+  padding: 10px;
+  margin-bottom: 10px; /* Space between items */
+  transition: box-shadow 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.cart-item:hover {
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Shadow on hover */
+}
+
+.cart-item-image {
+  width: 50px; /* Consistent image size */
+  height: auto;
+  border-radius: 4px; /* Rounded corners for images */
+  margin-right: 10px; /* Space between image and text */
+}
+
+.cart-item-details {
+  flex-grow: 1; /* Allow details to take available space */
+}
+
+.cart-item-title {
+  font-weight: bold; /* Bold title */
+  display: block; /* Block for better spacing */
+}
+
+.cart-item-price {
+  color: #555; /* Subtle color for price */
+}
+
+.cart-total {
+  margin-top: 20px; /* Space above the total */
+  text-align: right; /* Align the total to the right */
+  font-weight: bold; /* Make the total bold */
+  font-size: 1.2em; /* Slightly larger font size for emphasis */
+}
+

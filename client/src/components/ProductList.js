@@ -2,8 +2,8 @@
 
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { Link } from 'react-router-dom';
 import '../App.css';
+import { Link } from 'react-router-dom';
 
 const ProductList = () => {
     const [products, setProducts] = useState([]);
@@ -15,6 +15,13 @@ const ProductList = () => {
             })
             .catch(err => console.error(err));
     }, []);
+
+    const handleAddToCart = (product) => {
+        const cartItems = JSON.parse(localStorage.getItem('cart')) || [];
+        cartItems.push(product);
+        localStorage.setItem('cart', JSON.stringify(cartItems));
+        alert('Item has been added to cart');
+    };
 
     return (
         <div>
@@ -29,7 +36,7 @@ const ProductList = () => {
                         <h2>{product.title}</h2>
                         <p>{product.description}</p>
                         <p>Price: ${product.price.toFixed(2)}</p>
-                        <button>Add to Cart</button>
+                        <button onClick={() => handleAddToCart(product)}>Add to Cart</button>
                     </div>
                 ))}
             </div>
