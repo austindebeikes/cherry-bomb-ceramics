@@ -188,14 +188,13 @@ button:hover {
 }
 
 .cart-item {
-  display: flex;
-  align-items: center;
+  display: flex; /* Enable flexbox */
+  justify-content: space-between; /* Space items evenly */
+  align-items: center; /* Center items vertically */
+  margin: 10px 0; /* Space between items */
+  padding: 10px; /* Padding for items */
   background-color: #f9f9f9; /* Light background for items */
-  border: 1px solid #ddd; /* Border for separation */
-  border-radius: 8px; /* Rounded corners */
-  padding: 10px;
-  margin-bottom: 10px; /* Space between items */
-  transition: box-shadow 0.3s ease; /* Smooth transition for hover effect */
+  border-radius: 5px; /* Rounded corners */
 }
 
 .cart-item:hover {
@@ -263,7 +262,7 @@ button:hover {
 
 .submit-button {
   padding: 10px;
-  background-color: #6B4F4F; /* Dark earthy red for buttons */
+  background-color: #98a265; /* Dark earthy red for buttons */
   color: white;
   border: none;
   border-radius: 5px;
@@ -272,7 +271,7 @@ button:hover {
 }
 
 .submit-button:hover {
-  background-color: #A0522D; /* Change to a lighter brown on hover */
+  background-color: #a07b2d; /* Change to a lighter brown on hover */
 }
 
 .checkout-buttons-container {
@@ -300,15 +299,14 @@ button:hover {
 
 .remove-button {
   padding: 5px 10px;
-  background-color: #e57373; /* Light red color */
+  background-color: #6B4F4F; /* Dark earthy red for buttons */
   color: white;
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  margin-left: 10px; /* Spacing from the price */
 }
 
 .remove-button:hover {
-  background-color: #c62828; /* Darker shade on hover */
+  background-color: #A0522D; /* Change to a lighter brown on hover */
 }
 

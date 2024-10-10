@@ -19,7 +19,10 @@ const Cart = () => {
 
     return (
         <div className="cart-container">
-            <Link to="/" className="home-button">Home</Link>
+            <div className="cart-buttons-container">
+                <Link to="/" className="home-button">Home</Link>
+                <Link to="/checkout" className="checkout-button">Checkout</Link>
+            </div>
             <h1>Your Cart</h1>
             {cartItems.length === 0 ? (
                 <p>Your cart is empty.</p>
@@ -32,10 +35,10 @@ const Cart = () => {
                                 <div className="cart-item-details">
                                     <span className="cart-item-title">{item.title}</span>
                                     <span className="cart-item-price">${item.price.toFixed(2)}</span>
-                                    <button onClick={() => handleRemoveItem(index)} className="remove-button">
-                                        Remove
-                                    </button>
                                 </div>
+                                <button onClick={() => handleRemoveItem(index)} className="remove-button">
+                                    Remove
+                                </button>
                             </li>
                         ))}
                     </ul>
