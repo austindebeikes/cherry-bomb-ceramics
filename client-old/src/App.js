@@ -37,7 +37,7 @@ function App() {
         <footer className="footer">
           <p>Dina DeBeikes | Ceramics Artist</p>
           <p>Creating beautiful pieces since high school.</p>
-          <p>Based in beautiful San Diego, sharing life with her cat Dobby.</p>
+          <p>Based in beautiful San Diego, sharing life with her cat Dobby and sweeto.</p>
         </footer>
       </div>
     </Router>

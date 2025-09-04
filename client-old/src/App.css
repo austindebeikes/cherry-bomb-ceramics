@@ -1,0 +1,316 @@
+body {
+  background: repeating-linear-gradient(
+      90deg,              /*Angle for the stripes*/
+      #ffe6f2,            /* Light pink color */
+      #ffe6f2 20px,       /* Width of the pink stripe */
+      #ffffff 20px,       /* White color */
+      #ffffff 40px        /* Width of the white stripe */
+  );
+  font-family: 'Poppins', sans-serif;
+}
+
+
+/* Center the welcome message */
+h1 {
+  text-align: center;
+  font-family: 'Playfair Display', serif; 
+  color: #6B4F4F; /* Dark earthy red */
+  margin-top: 20px; 
+}
+
+/* Gallery container styles */
+.gallery {
+  display: flex; 
+  flex-wrap: wrap; 
+  justify-content: center; 
+  margin: 20px; 
+}
+
+/* Individual gallery item styles */
+.gallery-item {
+  margin: 15px; 
+  border: 2px solid #6B4F4F; 
+  border-radius: 10px; 
+  overflow: hidden; 
+  transition: transform 0.3s; 
+  width: 200px; 
+  text-align: center; 
+  background-color: #FFFFFF; /* White background for items */
+}
+
+/* Responsive image styling */
+.gallery-item img {
+  width: 100%; 
+  height: auto; 
+}
+
+/* Hover effect for gallery items */
+.gallery-item:hover {
+  transform: scale(1.05); 
+}
+
+/* Welcome section */
+.welcome-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #E7D4C8; /* Soft blush background */
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.welcome-text {
+  font-family: 'Dancing Script', cursive; 
+  font-size: 2.5rem; 
+  color: #6B4F4F; 
+  margin: 0 15px; 
+}
+
+/* Centered header for product section */
+.centered-header {
+  text-align: center;
+  margin-bottom: 20px;
+  text-decoration: underline; /* Underline the header */
+}
+
+.cherry-image {
+  width: 78px; /* Set width for the cherry images */
+  height: 50px;
+  border-radius: 50%; /* Round shape */
+  object-fit: cover; /* Ensure the image fits the shape properly */
+}
+
+.footer {
+  background-color: #E7D4C8; /* Match the soft blush background */
+  color: #6B4F4F; /* Dark earthy red */
+  text-align: center; /* Center the text */
+  padding: 20px; /* Padding around the footer */
+  position: relative; /* Ensure it stays at the bottom */
+  bottom: 0; /* Align to the bottom */
+  width: 100%; /* Full width */
+  margin-top: 20px; /* Space above the footer */
+}
+
+.footer p {
+  margin: 5px 0; /* Spacing between lines */
+  font-size: 0.9rem; /* Smaller font size */
+}
+
+
+/* Buttons */
+button {
+  background-color: #6B4F4F; /* Dark earthy red for buttons */
+  color: white; 
+  border: none; 
+  padding: 10px 20px; 
+  border-radius: 5px; 
+  cursor: pointer; 
+}
+
+button:hover {
+  background-color: #A0522D; /* Change to a lighter brown on hover */
+}
+
+/* src/App.css */
+
+/* src/App.css */
+
+.cart-buttons-container {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.home-button, .checkout-button {
+  padding: 10px 20px;
+  background-color: #6B4F4F; /* Dark earthy red for buttons */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none; /* Remove underline */
+}
+
+.home-button:hover, .checkout-button:hover {
+  background-color: #A0522D; /* Change to a lighter brown on hover */
+}
+
+
+/* src/App.css */
+
+/* src/App.css */
+
+.header-container {
+  display: flex;
+  justify-content: space-between; /* Space between header and button */
+  align-items: center; /* Vertically center items */
+  margin-bottom: 20px; /* Add some space below */
+}
+
+.centered-header {
+  flex-grow: 1; /* Allow header to grow to fill available space */
+  text-align: center; /* Center the header text */
+  margin-left: 100px;
+}
+
+.go-to-cart-button {
+  margin-right: 20px; /* Add space from the right */
+  padding: 10px 20px; /* Adjust padding for aesthetics */
+  background-color: #6B4F4F; /* Dark earthy red for buttons */
+  color: white; /* Text color */
+  border: none; /* No border */
+  border-radius: 5px; /* Rounded corners */
+  cursor: pointer; /* Pointer on hover */
+  text-decoration: none; /* Remove underline */
+}
+
+.go-to-cart-button:hover {
+  background-color: #A0522D; /* Change to a lighter brown on hover */
+}
+
+
+
+/* Additional styles for a more polished look */
+.gallery-item {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+/* src/App.css */
+
+.cart-container {
+  max-width: 600px; /* Limit the width of the cart */
+  margin: auto; /* Center the cart on the page */
+  padding: 20px; /* Add some padding */
+  background-color: #fff; /* Background color for the cart */
+  border-radius: 8px; /* Rounded corners for the cart */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Soft shadow */
+}
+
+.cart-items {
+  margin: 20px 0;
+}
+
+.cart-item {
+  display: flex; /* Enable flexbox */
+  justify-content: space-between; /* Space items evenly */
+  align-items: center; /* Center items vertically */
+  margin: 10px 0; /* Space between items */
+  padding: 10px; /* Padding for items */
+  background-color: #f9f9f9; /* Light background for items */
+  border-radius: 5px; /* Rounded corners */
+}
+
+.cart-item:hover {
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Shadow on hover */
+}
+
+.cart-item-image {
+  width: 50px; /* Consistent image size */
+  height: auto;
+  border-radius: 4px; /* Rounded corners for images */
+  margin-right: 10px; /* Space between image and text */
+}
+
+.cart-item-details {
+  flex-grow: 1; /* Allow details to take available space */
+}
+
+.cart-item-title {
+  font-weight: bold; /* Bold title */
+  display: block; /* Block for better spacing */
+}
+
+.cart-item-price {
+  color: #555; /* Subtle color for price */
+}
+
+.cart-total {
+  margin-top: 20px; /* Space above the total */
+  text-align: right; /* Align the total to the right */
+  font-weight: bold; /* Make the total bold */
+  font-size: 1.2em; /* Slightly larger font size for emphasis */
+}
+
+/* src/App.css */
+
+.checkout-container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centering the content */
+}
+
+.checkout-form {
+  display: flex;
+  flex-direction: column;
+  width: 100%; /* Use full width of the container */
+}
+
+.checkout-form label {
+  margin: 15px 0; /* Spacing above and below each label */
+}
+
+.checkout-form input {
+  padding: 8px;
+  margin: 5px 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 100%; /* Make inputs full width */
+}
+
+.submit-button {
+  padding: 10px;
+  background-color: #98a265; /* Dark earthy red for buttons */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.submit-button:hover {
+  background-color: #a07b2d; /* Change to a lighter brown on hover */
+}
+
+.checkout-buttons-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+  width: 100%; /* Ensure it uses full width */
+}
+
+.cart-button {
+  padding: 10px;
+  background-color: #6B4F4F; /* Dark earthy red for buttons */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none; /* Remove underline */
+}
+
+.cart-button:hover {
+  background-color: #A0522D; /* Change to a lighter brown on hover */
+}
+
+/* src/App.css */
+
+.remove-button {
+  padding: 5px 10px;
+  background-color: #6B4F4F; /* Dark earthy red for buttons */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.remove-button:hover {
+  background-color: #A0522D; /* Change to a lighter brown on hover */
+}
+
