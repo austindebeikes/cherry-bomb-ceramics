@@ -2,6 +2,7 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 
 const sections = [
+    { id: "home", title: "Home", image: "https://images.pexels.com/photos/3094018/pexels-photo-3094018.jpeg", route: "/" },
     { id: "petite-fruit", title: "Petite Fruit", image: "https://images.pexels.com/photos/3094018/pexels-photo-3094018.jpeg", route: "/petite-fruit" },
     { id: "tea-set", title: "Tea Set", image: "https://images.pexels.com/photos/2133982/pexels-photo-2133982.jpeg", route: "/tea-set" },
     { id: "vases", title: "Vases", image: "https://images.pexels.com/photos/3692053/pexels-photo-3692053.jpeg", route: "/vases" },
@@ -20,20 +21,22 @@ const Homepage = () => {
                 <h1>Cherry Bomb Ceramics</h1>
             </div>
 
-            {/* Sections */}
-            {sections.map((section) => (
-                <div
-                    key={section.id}
-                    className="section"
-                    onClick={() => navigate(section.route)}
-                >
-                    <img src={section.image} alt={section.title} className="section-img" />
-                    <div className="section-overlay"></div>
-                    <div className="section-content">
-                        <h2>{section.title}</h2>
+            {/* Cards Container */}
+            <div className="cards-container">
+                {sections.map((section) => (
+                    <div
+                        key={section.id}
+                        className="section-card"
+                        onClick={() => navigate(section.route)}
+                    >
+                        <img src={section.image} alt={section.title} className="section-img" />
+                        <div className="section-overlay"></div>
+                        <div className="section-content">
+                            <h2>{section.title}</h2>
+                        </div>
                     </div>
-                </div>
-            ))}
+                ))}
+            </div>
         </div>
     );
 };

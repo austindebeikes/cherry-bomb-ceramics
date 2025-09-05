@@ -1,87 +1,121 @@
+/* Import cursive font */
 @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
 
+/* Body pastel background */
 body {
-  margin: 0;
-  font-family: 'Great Vibes', cursive;
-  background-color: #fff6f8; /* very light pastel pink */
-  color: #333;
+    margin: 0;
+    font-family: 'Great Vibes', cursive;
+    background-color: #fff6f8;
+    /* very light pastel pink */
+    color: #333;
 }
 
 /* Centered header */
 .header {
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
+    text-align: center;
+    padding: 4rem 2rem 2rem 2rem;
 }
 
 .header h1 {
-  font-size: 4rem;
-  color: #d98fa3; /* pastel rose */
-  margin-bottom: 2rem;
+    font-size: 4rem;
+    color: #d98fa3;
+    /* pastel rose */
+    margin-bottom: 2rem;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
 }
 
-/* Section blocks */
-.section {
-  position: relative;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  cursor: pointer;
-  text-align: center;
-  color: #fff;
-  border-radius: 1rem;
-  overflow: hidden;
+/* Container for cards */
+.cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    padding: 2rem;
 }
 
-.section h2 {
-  font-size: 3rem;
-  text-shadow: 2px 2px 6px rgba(0,0,0,0.3);
+/* Individual card style */
+.section-card {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    border-radius: 1rem;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    flex-shrink: 0;
+    background-color: #fdf0f5;
+    /* soft pastel pink */
 }
 
-/* Hover effect */
-.section:hover {
-  transform: scale(1.05);
-  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+.section-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
 }
 
-/* Section images & pastel overlay */
+/* Card image */
 .section-img {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  filter: brightness(0.7);
-  transition: filter 0.3s ease;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.8);
+    transition: filter 0.3s ease;
 }
 
-.section:hover .section-img {
-  filter: brightness(0.5);
+.section-card:hover .section-img {
+    filter: brightness(0.6);
 }
 
-/* Overlay color for readability */
+/* Overlay for text readability */
 .section-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(255, 182, 193, 0.3); /* pastel pink overlay */
-  transition: background-color 0.3s ease;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 182, 193, 0.2);
+    /* pastel pink overlay */
+    transition: background-color 0.3s ease;
 }
 
-.section:hover .section-overlay {
-  background-color: rgba(255, 182, 193, 0.1);
+.section-card:hover .section-overlay {
+    background-color: rgba(255, 182, 193, 0.1);
 }
 
-/* Section content */
+/* Card content */
 .section-content {
-  position: relative;
-  z-index: 2;
+    position: absolute;
+    z-index: 2;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #fff;
+}
+
+.section-content h2 {
+    font-size: 1.8rem;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .section-card {
+        width: 45%;
+        height: 250px;
+    }
+
+    .section-content h2 {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .section-card {
+        width: 90%;
+        height: 200px;
+    }
+
+    .section-content h2 {
+        font-size: 1.2rem;
+    }
 }
