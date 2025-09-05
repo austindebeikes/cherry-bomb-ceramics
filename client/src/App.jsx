@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import { Navbar, Nav, Container } from "react-bootstrap";
 
 // Import components
-import Homepage from "./components/Homepage";
+
 import PetiteFruit from "./components/PetiteFruit";
 import TeaSet from "./components/TeaSet";
 import Vases from "./components/Vases";
