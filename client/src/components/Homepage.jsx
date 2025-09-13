@@ -21,13 +21,13 @@ const Homepage = () => {
                 <h1>Cherry Bomb Ceramics</h1>
             </div>
 
-            {/* Cards Container */}
+            {/* Cards */}
             <div className="cards-container">
                 {sections.map((section) => (
                     <div
                         key={section.id}
                         className="section-card"
-                        onClick={() => navigate(section.route)}
+                        onClick={() => navigate(section.route)} // ✅ this triggers React Router navigation
                     >
                         <img src={section.image} alt={section.title} className="section-img" />
                         <div className="section-overlay"></div>
