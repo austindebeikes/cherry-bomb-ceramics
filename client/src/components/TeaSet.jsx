@@ -1,11 +1,14 @@
 import React from "react";
 import { Container, Row, Col, Card, Button } from "react-bootstrap";
+import { useCart } from "../contexts/CartContext";
 
 const TeaSet = () => {
+    const { addToCart } = useCart();
+
     const products = [
-        { id: 1, name: "Floral Tea Set", description: "Elegant tea set with floral designs.", price: "$45" },
-        { id: 2, name: "Brown Ceramic Tea Set", description: "Rustic brown set perfect for afternoon tea.", price: "$50" },
-        { id: 3, name: "Miniature Tea Set", description: "Small tea set ideal for display or children.", price: "$30" },
+        { id: 1, name: "Floral Tea Set", description: "Elegant tea set with floral designs.", price: 45, image: "https://images.pexels.com/photos/2133982/pexels-photo-2133982.jpeg" },
+        { id: 2, name: "Brown Ceramic Tea Set", description: "Rustic brown set perfect for afternoon tea.", price: 50, image: "https://images.pexels.com/photos/2133982/pexels-photo-2133982.jpeg" },
+        { id: 3, name: "Miniature Tea Set", description: "Small tea set ideal for display or children.", price: 30, image: "https://images.pexels.com/photos/2133982/pexels-photo-2133982.jpeg" },
     ];
 
     return (
@@ -15,11 +18,12 @@ const TeaSet = () => {
                 {products.map((product) => (
                     <Col key={product.id} md={4} className="mb-4">
                         <Card className="h-100 shadow-sm">
+                            <Card.Img variant="top" src={product.image} alt={product.name} />
                             <Card.Body>
                                 <Card.Title>{product.name}</Card.Title>
                                 <Card.Text>{product.description}</Card.Text>
-                                <Card.Text className="fw-bold">{product.price}</Card.Text>
-                                <Button variant="danger">Add to Cart</Button>
+                                <Card.Text className="fw-bold">${product.price.toFixed(2)}</Card.Text>
+                                <Button variant="danger" onClick={() => addToCart(product)}>Add to Cart</Button>
                             </Card.Body>
                         </Card>
                     </Col>
@@ -30,3 +34,4 @@ const TeaSet = () => {
 };
 
 export default TeaSet;
+
