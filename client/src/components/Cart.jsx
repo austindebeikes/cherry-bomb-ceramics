@@ -1,12 +1,12 @@
 // src/components/Cart.jsx
 import React from "react";
-import { Container, Row, Col, Card, Button } from "react-bootstrap";
 import { useCart } from "../contexts/CartContext";
+import { Container, Table, Button } from "react-bootstrap";
 
 const Cart = () => {
-    const { cartItems, removeFromCart, clearCart } = useCart();
+    const { cartItems, addToCart, decreaseQuantity, removeFromCart } = useCart();
 
-    // calculate total price
+    // Calculate total
     const total = cartItems.reduce(
         (sum, item) => sum + item.price * item.quantity,
         0
@@ -14,45 +14,85 @@ const Cart = () => {
 
     return (
         <Container className="mt-5">
-            <h2 className="text-center mb-4">Your Cart</h2>
+            <h2 className="mb-4 text-center">Your Cart</h2>
+
             {cartItems.length === 0 ? (
                 <p className="text-center">Your cart is empty.</p>
             ) : (
-                <>
-                    <Row>
+                <Table striped bordered hover responsive className="align-middle">
+                    <thead>
+                        <tr>
+                            <th>Product</th>
+                            <th style={{ width: "120px" }}>Image</th>
+                            <th>Description</th>
+                            <th>Price</th>
+                            <th style={{ width: "180px" }}>Quantity</th>
+                            <th>Subtotal</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
                         {cartItems.map((item) => (
-                            <Col key={item.id} md={4} className="mb-4">
-                                <Card className="h-100 shadow-sm">
-                                    <Card.Img
-                                        variant="top"
-                                        src={item.image}
-                                        alt={item.name}
-                                    />
-                                    <Card.Body>
-                                        <Card.Title>{item.name}</Card.Title>
-                                        <Card.Text>Price: ${item.price.toFixed(2)}</Card.Text>
-                                        <Card.Text>Quantity: {item.quantity}</Card.Text>
+                            <tr key={item.id}>
+                                <td>{item.name}</td>
+                                <td>
+                                    {item.image ? (
+                                        <img
+                                            src={item.image}
+                                            alt={item.name}
+                                            style={{ width: "80px", borderRadius: "8px" }}
+                                        />
+                                    ) : (
+                                        <span>No Image</span>
+                                    )}
+                                </td>
+                                <td>{item.description}</td>
+                                <td>${item.price.toFixed(2)}</td>
+                                <td>
+                                    <div className="d-flex align-items-center gap-2">
                                         <Button
-                                            variant="danger"
-                                            onClick={() => removeFromCart(item.id)}
+                                            variant="outline-secondary"
+                                            size="sm"
+                                            onClick={() =>
+                                                decreaseQuantity(item.id)
+                                            }
                                         >
-                                            Remove
+                                            –
                                         </Button>
-                                    </Card.Body>
-                                </Card>
-                            </Col>
+                                        <span>{item.quantity}</span>
+                                        <Button
+                                            variant="outline-secondary"
+                                            size="sm"
+                                            onClick={() => addToCart(item)}
+                                        >
+                                            +
+                                        </Button>
+                                    </div>
+                                </td>
+                                <td>${(item.price * item.quantity).toFixed(2)}</td>
+                                <td>
+                                    <Button
+                                        variant="danger"
+                                        size="sm"
+                                        onClick={() => removeFromCart(item.id)}
+                                    >
+                                        Remove
+                                    </Button>
+                                </td>
+                            </tr>
                         ))}
-                    </Row>
-                    <h4 className="text-end mt-4">Total: ${total.toFixed(2)}</h4>
-                    <div className="text-end">
-                        <Button variant="secondary" onClick={clearCart}>
-                            Clear Cart
-                        </Button>
-                    </div>
-                </>
+                    </tbody>
+                </Table>
+            )}
+
+            {cartItems.length > 0 && (
+                <h4 className="text-end mt-3">
+                    Total: <span className="text-danger">${total.toFixed(2)}</span>
+                </h4>
             )}
         </Container>
     );
 };
 
 export default Cart;
+
