@@ -1,0 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&display=swap');
+
+.elegant-heading {
+    font-family: 'Playfair Display', serif;
+    color: #d6336c;
+}
+
+.pastel-text {
+    color: #ff4d7a;
+    font-family: 'Playfair Display', serif;
+}
+
+/* Pop animation for cherry buttons */
+.pop {
+    animation: pop 0.3s ease forwards;
+}
+
+@keyframes pop {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.4); }
+    100% { transform: scale(1); }
+}
