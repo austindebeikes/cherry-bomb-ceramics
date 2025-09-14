@@ -9,7 +9,7 @@ import "react-toastify/dist/ReactToastify.css";
 import { CartProvider, useCart } from "./contexts/CartContext";
 
 // Import components
-import Homepage from "./components/HomePage";
+import HomePage from "./components/HomePage";
 import PetiteFruit from "./components/PetiteFruit";
 import TeaSet from "./components/TeaSet";
 import Vases from "./components/Vases";
@@ -17,6 +17,7 @@ import CoffeeMugs from "./components/CoffeeMugs";
 import About from "./components/About";
 import Contact from "./components/Contact";
 import Cart from "./components/Cart";
+import ProductDetails from "./components/ProductDetails";
 
 // Navbar with Cart Count
 const AppNavbar = () => {
@@ -26,9 +27,7 @@ const AppNavbar = () => {
   return (
     <Navbar bg="light" expand="lg" className="shadow-sm mb-4">
       <Container>
-        <Navbar.Brand as={Link} to="/">
-          Cherry Bomb Ceramics
-        </Navbar.Brand>
+        <Navbar.Brand as={Link} to="/">Cherry Bomb Ceramics</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ms-auto">
@@ -50,21 +49,80 @@ const AppNavbar = () => {
 };
 
 function App() {
+  // Hardcoded products array
+  const products = [
+    {
+      id: 1,
+      name: "Ceramic Teapot",
+      description: "Elegant hand-crafted teapot for your tea moments.",
+      category: "Tea Sets",
+      price: 45.0,
+      image: "https://images.pexels.com/photos/3094018/pexels-photo-3094018.jpeg"
+    },
+    {
+      id: 2,
+      name: "Ceramic Teacup",
+      description: "Delicate teacup to match your teapot.",
+      category: "Tea Sets",
+      price: 15.0,
+      image: "https://images.pexels.com/photos/241886/pexels-photo-241886.jpeg"
+    },
+    {
+      id: 3,
+      name: "Clay Vase",
+      description: "Perfect vase to brighten any room.",
+      category: "Vases",
+      price: 30.0,
+      image: "https://images.pexels.com/photos/3692053/pexels-photo-3692053.jpeg"
+    },
+    {
+      id: 4,
+      name: "Coffee Mug",
+      description: "Stylish mug for your morning coffee.",
+      category: "Coffee Mugs",
+      price: 12.0,
+      image: "https://images.pexels.com/photos/2417857/pexels-photo-2417857.jpeg"
+    },
+    {
+      id: 5,
+      name: "Floral Tea Set",
+      description: "Complete tea set with floral design.",
+      category: "Tea Sets",
+      price: 60.0,
+      image: "https://images.pexels.com/photos/2133982/pexels-photo-2133982.jpeg"
+    },
+    {
+      id: 6,
+      name: "Petite Fruit Bowl",
+      description: "Small and charming fruit bowl.",
+      category: "Petite Fruit",
+      price: 25.0,
+      image: "https://images.pexels.com/photos/3171833/pexels-photo-3171833.jpeg"
+    }
+  ];
+
   return (
     <CartProvider>
       <Router>
         <AppNavbar />
         <Routes>
-          <Route path="/" element={<Homepage />} />
+          {/* Homepage separated by categories */}
+          <Route path="/" element={<HomePage products={products} />} />
+
+          {/* Individual product details */}
+          <Route path="/product/:id" element={<ProductDetails products={products} />} />
+
+          {/* Existing category pages */}
           <Route path="/petite-fruit" element={<PetiteFruit />} />
           <Route path="/tea-set" element={<TeaSet />} />
           <Route path="/vases" element={<Vases />} />
           <Route path="/coffee-mugs" element={<CoffeeMugs />} />
+
+          {/* Other pages */}
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/cart" element={<Cart />} />
         </Routes>
-        {/* Toast notifications */}
         <ToastContainer position="top-center" autoClose={2000} />
       </Router>
     </CartProvider>

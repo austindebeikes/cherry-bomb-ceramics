@@ -2,34 +2,42 @@
 import React, { useState } from "react";
 import { useCart } from "../contexts/CartContext";
 import { Container, Table, Button, Badge } from "react-bootstrap";
-import "../Cart.css"; // We'll add some CSS for animations
+import "../Cart.css"; // CSS handles fonts, animations, hover effects, cherry burst
 
 const Cart = () => {
     const { cartItems, addToCart, decreaseQuantity, removeFromCart } = useCart();
     const [animateId, setAnimateId] = useState(null);
+    const [burstId, setBurstId] = useState(null);
 
-    // Calculate total
     const total = cartItems.reduce(
         (sum, item) => sum + item.price * item.quantity,
         0
     );
 
-    // Handle animation trigger
     const handleAnimate = (id, action) => {
         setAnimateId(id + "-" + action);
         setTimeout(() => setAnimateId(null), 300);
     };
 
+    const handleBurst = (id) => {
+        setBurstId(id);
+        setTimeout(() => setBurstId(null), 600); // duration of burst
+    };
+
+    const handleAdd = (item) => {
+        addToCart(item);
+        handleAnimate(item.id, "plus");
+        handleBurst(item.id);
+    };
+
     return (
         <Container className="mt-5">
-            <h2
-                className="mb-4 text-center elegant-heading"
-            >
+            <h2 className="mb-4 text-center site-font-heading">
                 🍒 Your Cart 🍒
             </h2>
 
             {cartItems.length === 0 ? (
-                <p className="text-center pastel-text">
+                <p className="text-center site-font-text pastel-text">
                     Your cart is empty. Go grab some cherries!
                 </p>
             ) : (
@@ -58,20 +66,25 @@ const Cart = () => {
                                 <td style={{ fontWeight: "bold", color: "#d6336c" }}>{item.name}</td>
                                 <td>
                                     {item.image ? (
-                                        <img
-                                            src={item.image}
-                                            alt={item.name}
-                                            style={{
-                                                width: "80px",
-                                                borderRadius: "12px",
-                                                border: "2px solid #f7c2d9",
-                                            }}
-                                        />
+                                        <div className="image-wrapper">
+                                            <img
+                                                src={item.image}
+                                                alt={item.name}
+                                                className="cart-image"
+                                            />
+                                            {burstId === item.id && (
+                                                <div className="cherry-burst">
+                                                    {Array.from({ length: 6 }).map((_, i) => (
+                                                        <span key={i} className="cherry">🍒</span>
+                                                    ))}
+                                                </div>
+                                            )}
+                                        </div>
                                     ) : (
                                         <span>No Image</span>
                                     )}
                                 </td>
-                                <td>{item.description}</td>
+                                <td className="site-font-text">{item.description}</td>
                                 <td>${item.price.toFixed(2)}</td>
                                 <td>
                                     <div className="d-flex align-items-center gap-2">
@@ -98,10 +111,7 @@ const Cart = () => {
                                             variant="outline-danger"
                                             size="sm"
                                             style={{ borderRadius: "50%", fontSize: "1.2rem" }}
-                                            onClick={() => {
-                                                addToCart(item);
-                                                handleAnimate(item.id, "plus");
-                                            }}
+                                            onClick={() => handleAdd(item)}
                                             className={animateId === item.id + "-plus" ? "pop" : ""}
                                         >
                                             🍒
@@ -125,7 +135,7 @@ const Cart = () => {
             )}
 
             {cartItems.length > 0 && (
-                <h4 className="text-end elegant-heading mt-3">
+                <h4 className="text-end site-font-heading mt-3">
                     Total: <span className="text-danger">${total.toFixed(2)}</span> 🍒
                 </h4>
             )}

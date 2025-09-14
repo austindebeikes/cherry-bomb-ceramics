@@ -1,0 +1,32 @@
+.product-card {
+    border-radius: 12px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-color: #fff5f8;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(255, 182, 193, 0.5);
+}
+
+.product-card-image {
+    border-radius: 12px;
+    height: 200px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.product-card-image:hover {
+    transform: scale(1.05);
+}
+
+.site-font-heading {
+    font-family: 'Montserrat', sans-serif; /* same as product description font */
+    color: #d6336c;
+    font-weight: 600;
+}
+
+.site-font-text {
+    font-family: 'Montserrat', sans-serif;
+    color: #ff4d7a;
+}
