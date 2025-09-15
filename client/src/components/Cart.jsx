@@ -33,7 +33,16 @@ const Cart = () => {
     return (
         <Container className="mt-5">
             <h2 className="mb-4 text-center site-font-heading">
-                🍒 Your Cart 🍒
+            <img
+                                            src="/images/cherry.png"
+                                            alt="Cherry"
+                                            className="decor-icon-cart"
+                                        /> Your Cart            <img
+                                        src="/images/cherub.png"
+                                        alt="Cherub"
+                                        className="decor-icon-cart"
+                                    
+                                    />
             </h2>
 
             {cartItems.length === 0 ? (
@@ -63,7 +72,7 @@ const Cart = () => {
                     <tbody>
                         {cartItems.map((item) => (
                             <tr key={item.id} style={{ backgroundColor: "#fff0f6" }}>
-                                <td style={{ fontWeight: "bold", color: "#d6336c" }}>{item.name}</td>
+                                <td style={{ fontWeight: "bold", color: "#250a17" }}>{item.name}</td>
                                 <td>
                                     {item.image ? (
                                         <div className="image-wrapper">
@@ -75,7 +84,11 @@ const Cart = () => {
                                             {burstId === item.id && (
                                                 <div className="cherry-burst">
                                                     {Array.from({ length: 6 }).map((_, i) => (
-                                                        <span key={i} className="cherry">🍒</span>
+                                                        <span key={i} className="cherry">                   <img
+                                                        src="/images/cherry.png"
+                                                        alt="Cherry"
+                                                        className="decor-icon"
+                                                    /></span>
                                                     ))}
                                                 </div>
                                             )}
@@ -89,7 +102,7 @@ const Cart = () => {
                                 <td>
                                     <div className="d-flex align-items-center gap-2">
                                         <Button
-                                            variant="outline-danger"
+                                            variant="outline"
                                             size="sm"
                                             style={{ borderRadius: "50%", fontSize: "1.2rem" }}
                                             onClick={() => {
@@ -98,30 +111,38 @@ const Cart = () => {
                                             }}
                                             className={animateId === item.id + "-minus" ? "pop" : ""}
                                         >
-                                            🍒
+                                                               <img
+                                            src="/images/cherry.png"
+                                            alt="Cherry"
+                                            className="decor-icon"
+                                        />
                                         </Button>
                                         <Badge
-                                            bg="danger"
+                                            bg="secondary"
                                             pill
                                             style={{ fontSize: "1rem" }}
                                         >
                                             {item.quantity}
                                         </Badge>
                                         <Button
-                                            variant="outline-danger"
+                                            variant="outline"
                                             size="sm"
                                             style={{ borderRadius: "50%", fontSize: "1.2rem" }}
                                             onClick={() => handleAdd(item)}
                                             className={animateId === item.id + "-plus" ? "pop" : ""}
                                         >
-                                            🍒
+                                                               <img
+                                            src="/images/cherry.png"
+                                            alt="Cherry"
+                                            className="decor-icon"
+                                        />
                                         </Button>
                                     </div>
                                 </td>
                                 <td>${(item.price * item.quantity).toFixed(2)}</td>
                                 <td>
                                     <Button
-                                        variant="danger"
+                                        className="custom-btn custom-btn:hover"
                                         size="sm"
                                         onClick={() => removeFromCart(item.id)}
                                     >
@@ -136,7 +157,11 @@ const Cart = () => {
 
             {cartItems.length > 0 && (
                 <h4 className="text-end site-font-heading mt-3">
-                    Total: <span className="text-danger">${total.toFixed(2)}</span> 🍒
+                    Total: <span className="pastel-text">${total.toFixed(2)}</span>                                            <img
+                                            src="/images/cherry.png"
+                                            alt="Cherry"
+                                            className="decor-icon-cherry"
+                                        />
                 </h4>
             )}
         </Container>

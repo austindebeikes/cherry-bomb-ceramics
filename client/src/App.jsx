@@ -31,7 +31,7 @@ const AppNavbar = () => {
   <img
     src="/images/CBC Logo.png"
     alt="Cherry Bomb Ceramics Logo"
-    style={{ height: "60px", objectFit: "contain" }}
+    style={{ height: "200px", objectFit: "contain" }}
   />
 </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
@@ -45,7 +45,7 @@ const AppNavbar = () => {
             <Nav.Link as={Link} to="/about">About</Nav.Link>
             <Nav.Link as={Link} to="/contact">Contact</Nav.Link>
             <Nav.Link as={Link} to="/cart">
-              Cart {cartCount > 0 && <Badge bg="danger">{cartCount}</Badge>}
+              Cart {cartCount > 0 && <Badge bg="secondary">{cartCount}</Badge>}
             </Nav.Link>
           </Nav>
         </Navbar.Collapse>

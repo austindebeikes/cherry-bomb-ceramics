@@ -72,18 +72,16 @@ const HomePage = () => {
                             <Card.Title className="cursive-heading">{featuredProduct.name}</Card.Title>
                             <Card.Text className="montserrat-text">{featuredProduct.description}</Card.Text>
 
-                            {/* Cherry accent */}
-                            <img
-                                src="/images/cherry.png"
-                                alt="Cherry"
-                                className="decor-icon"
-                            />
 
-                            <h5 className="text-muted montserrat-text">
+                            <h5 className="cursive-heading">
                                 ${featuredProduct.price.toFixed(2)}
                             </h5>
                             <Link to={`/product/${featuredProduct.id}`}>
-                                <Button className="custom-btn mt-2">View Details 🍒</Button>
+                                <Button className="custom-btn mt-2">View Details <img
+                                            src="/images/cherry.png"
+                                            alt="Cherry"
+                                            className="decor-icon-cherry"
+                                        /></Button>
                             </Link>
                         </Card.Body>
                     </Card>
@@ -122,16 +120,23 @@ const HomePage = () => {
                 ))}
             </Row>
 
-            {/* Footer */}
             <footer className="footer mt-5 py-4 text-center">
-                <p className="mb-2 montserrat-text">Follow us on social media!</p>
-                <div className="social-icons">
-                    <a href="#" className="text-muted mx-2"><FaTwitter size={24} /></a>
-                    <a href="#" className="text-muted mx-2"><FaInstagram size={24} /></a>
-                    <a href="#" className="text-muted mx-2"><FaFacebook size={24} /></a>
-                </div>
-                <p className="mt-2 text-muted montserrat-text">© 2025 Cherry Bomb Ceramics</p>
-            </footer>
+  {/* Logo */}
+  <img
+    src="/images/CBC Logo.png"
+    alt="Cherry Bomb Ceramics Logo"
+    style={{ height: "150px", marginBottom: "-10px" }}
+  />
+
+  <p className="mb-2 montserrat-text">Follow us on social media!</p>
+  <div className="social-icons">
+    <a href="#" className="text-muted mx-2"><FaTwitter size={24} /></a>
+    <a href="#" className="text-muted mx-2"><FaInstagram size={24} /></a>
+    <a href="#" className="text-muted mx-2"><FaFacebook size={24} /></a>
+  </div>
+  <p className="mt-2 text-muted montserrat-text">© 2025 Cherry Bomb Ceramics</p>
+</footer>
+
         </Container>
     );
 };

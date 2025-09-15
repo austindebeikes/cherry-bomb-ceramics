@@ -26,7 +26,11 @@ const ProductList = ({ products }) => {
                                 </Card.Text>
                                 <Link to={`/product/${product.id}`} className="mt-auto">
                                     <Button variant="danger" className="w-100">
-                                        View Details 🍒
+                                        View Details <img
+                                            src="/images/cherry.png"
+                                            alt="Cherry"
+                                            className="decor-icon"
+                                        />
                                     </Button>
                                 </Link>
                             </Card.Body>

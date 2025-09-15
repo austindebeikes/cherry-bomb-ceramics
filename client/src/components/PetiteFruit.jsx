@@ -23,7 +23,13 @@ const PetiteFruit = () => {
                                 <Card.Title>{product.name}</Card.Title>
                                 <Card.Text>{product.description}</Card.Text>
                                 <Card.Text className="fw-bold">${product.price.toFixed(2)}</Card.Text>
-                                <Button variant="danger" onClick={() => addToCart(product)}>Add to Cart</Button>
+                                <Button className="custom-btn custom-btn:hover" onClick={() => addToCart(product)}>Add to Cart 
+                                        <img
+                                            src="/images/cherub.png"
+                                            alt="Cherub"
+                                            className="decor-icon-cherub"
+                                        />
+                                </Button>
                             </Card.Body>
                         </Card>
                     </Col>

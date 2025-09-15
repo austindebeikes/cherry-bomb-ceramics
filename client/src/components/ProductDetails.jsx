@@ -35,13 +35,13 @@ const ProductDetails = ({ products }) => {
                     <p className="site-font-text">
                         <strong>Category:</strong> {product.category}
                     </p>
-                    <h4 className="site-font-heading text-danger">
+                    <h4 className="pastel-text">
                         ${product.price.toFixed(2)}
                     </h4>
 
-                    <div className="d-flex align-items-center gap-3 mt-3">
+                    <div className="d-flex align-items-center gap-4 mt-100">
                         <Button
-                            variant="outline-danger"
+                            variant="outline-secondary"
                             onClick={() =>
                                 setQuantity(quantity > 1 ? quantity - 1 : 1)
                             }
@@ -49,11 +49,12 @@ const ProductDetails = ({ products }) => {
                         >
                             –
                         </Button>
-                        <Badge bg="danger" pill>
+                        <Badge bg="secondary" pill>
                             {quantity}
                         </Badge>
                         <Button
-                            variant="outline-danger"
+                            variant="outline-secondary
+                        "
                             onClick={() => setQuantity(quantity + 1)}
                             style={{ borderRadius: "50%" }}
                         >
@@ -62,11 +63,15 @@ const ProductDetails = ({ products }) => {
                     </div>
 
                     <Button
-                        variant="danger"
-                        className="mt-3"
+                        className="custom-btn custom-btn:hover"
+                        
                         onClick={handleAddToCart}
                     >
-                        Add to Cart 🍒
+                        Add to Cart             <img
+                                            src="/images/cherub.png"
+                                            alt="Cherub"
+                                            className="decor-icon-cherub"
+                                        />
                     </Button>
                 </Col>
             </Row>

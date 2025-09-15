@@ -58,8 +58,12 @@ const Contact = () => {
                                 required
                             />
                         </Form.Group>
-                        <Button variant="danger" type="submit" className="w-100">
-                            Send Message
+                        <Button className="custom-btn custom-btn:hover" type="submit" >
+                            Send Message                    <img
+                                            src="/images/cherry.png"
+                                            alt="Cherry"
+                                            className="decor-icon-contact"
+                                        />
                         </Button>
                     </Form>
                 </Col>
