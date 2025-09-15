@@ -9,6 +9,7 @@ export default function NavBar() {
                 background: "#ffffffd9",
                 backdropFilter: "saturate(180%) blur(14px)",
                 boxShadow: "0 1px 10px rgba(0,0,0,.06)",
+
             }}
         >
             <div className="container">

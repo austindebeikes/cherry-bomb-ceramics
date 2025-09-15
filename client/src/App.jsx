@@ -25,15 +25,15 @@ const AppNavbar = () => {
   const cartCount = cartItems.reduce((sum, item) => sum + item.quantity, 0);
 
   return (
-    <Navbar bg="light" expand="lg" className="shadow-sm mb-4">
+    <Navbar expand="lg" className="custom-navbar shadow-sm mb-4">
       <Container>
-      <Navbar.Brand as={Link} to="/">
-  <img
-    src="/images/CBC Logo.png"
-    alt="Cherry Bomb Ceramics Logo"
-    style={{ height: "200px", objectFit: "contain" }}
-  />
-</Navbar.Brand>
+        <Navbar.Brand as={Link} to="/">
+          <img
+            src="/images/CBC Logo.png"
+            alt="Cherry Bomb Ceramics Logo"
+            style={{ height: "140px", objectFit: "contain" }}
+          />
+        </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ms-auto">
@@ -45,8 +45,9 @@ const AppNavbar = () => {
             <Nav.Link as={Link} to="/about">About</Nav.Link>
             <Nav.Link as={Link} to="/contact">Contact</Nav.Link>
             <Nav.Link as={Link} to="/cart">
-              Cart {cartCount > 0 && <Badge bg="secondary">{cartCount}</Badge>}
+              Cart {cartCount > 0 && <Badge className="cart-badge">{cartCount}</Badge>}
             </Nav.Link>
+
           </Nav>
         </Navbar.Collapse>
       </Container>

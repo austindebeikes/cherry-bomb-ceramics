@@ -61,7 +61,7 @@ body::before {
 
 /* Custom buttons */
 .custom-btn {
-    background-color: #d8cea1 !important;
+    background-color: #88291f !important;
     /* muted pink */
 
     color: #fff !important;
@@ -69,7 +69,7 @@ body::before {
 }
 
 .custom-btn:hover {
-    background-color: #d8c771 !important;
+    background-color: #d55047 !important;
     color: #fff !important;
 }
 
@@ -100,7 +100,7 @@ body::before {
 }
 
 .decor-icon {
-    width: 40px;
+    width:40px;
     height: auto;
     opacity: 0.6;
     margin-top: 10px;
