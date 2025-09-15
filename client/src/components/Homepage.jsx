@@ -57,6 +57,7 @@ const HomePage = () => {
 
     return (
         <Container className="mt-5">
+            {/* Featured Product */}
             <h2 className="cursive-heading text-center mb-4"> Featured Product </h2>
             <Row className="mb-5 justify-content-center">
                 <Col xs={12} md={6}>
@@ -70,7 +71,17 @@ const HomePage = () => {
                         <Card.Body className="text-center">
                             <Card.Title className="cursive-heading">{featuredProduct.name}</Card.Title>
                             <Card.Text className="montserrat-text">{featuredProduct.description}</Card.Text>
-                            <h5 className="text-muted montserrat-text">${featuredProduct.price.toFixed(2)}</h5>
+
+                            {/* Cherry accent */}
+                            <img
+                                src="/images/cherry.png"
+                                alt="Cherry"
+                                className="decor-icon"
+                            />
+
+                            <h5 className="text-muted montserrat-text">
+                                ${featuredProduct.price.toFixed(2)}
+                            </h5>
                             <Link to={`/product/${featuredProduct.id}`}>
                                 <Button className="custom-btn mt-2">View Details 🍒</Button>
                             </Link>
@@ -79,16 +90,31 @@ const HomePage = () => {
                 </Col>
             </Row>
 
+            {/* Categories */}
             <Row className="mb-5">
                 {categories.map((cat) => (
                     <Col key={cat.title} xs={12} md={6} lg={4} className="mb-4">
                         <Link to={cat.link} className="info-link">
                             <Card className="info-card shadow-sm">
                                 <Card.Img src={cat.image} alt={cat.title} className="info-image" />
-                                <Card.Body>
+                                <Card.Body className="text-center">
                                     <Card.Title className="cursive-heading">{cat.title}</Card.Title>
                                     <Card.Text className="montserrat-text">{cat.description}</Card.Text>
 
+                                    {/* Decorative icons */}
+                                    {cat.title === "About" ? (
+                                        <img
+                                            src="/images/cherub.png"
+                                            alt="Cherub"
+                                            className="decor-icon"
+                                        />
+                                    ) : (
+                                        <img
+                                            src="/images/cherry.png"
+                                            alt="Cherry"
+                                            className="decor-icon"
+                                        />
+                                    )}
                                 </Card.Body>
                             </Card>
                         </Link>

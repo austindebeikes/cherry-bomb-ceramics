@@ -27,7 +27,13 @@ const AppNavbar = () => {
   return (
     <Navbar bg="light" expand="lg" className="shadow-sm mb-4">
       <Container>
-        <Navbar.Brand as={Link} to="/">Cherry Bomb Ceramics</Navbar.Brand>
+      <Navbar.Brand as={Link} to="/">
+  <img
+    src="/images/CBC Logo.png"
+    alt="Cherry Bomb Ceramics Logo"
+    style={{ height: "60px", objectFit: "contain" }}
+  />
+</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ms-auto">

@@ -1,71 +1,109 @@
 body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
     background-image: url('/images/stripes.png');
-    background-repeat: repeat;
-    background-size: auto;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    /* gives that parallax effect */
+    background-position: center;
     background-color: #fceef4;
-  }
-  
+    /* soft fallback pastel */
+    color: #333;
+}
+
+/* Optional: overlay to soften the stripes */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 245, 248, 0.7);
+    /* pale pink tint */
+    pointer-events: none;
+    /* so clicks still work */
+    z-index: -1;
+    /* keeps overlay behind everything */
+}
 
 
 /* Info Cards (used for all cards) */
 .info-card {
     border-radius: 15px;
-    background-color: #f7eaf0; /* muted pastel */
+    background-color: #f7eaf0;
+    /* muted pastel */
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
-  .info-card:hover {
+}
+
+.info-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 12px 24px rgba(200, 150, 180, 0.3);
-  }
-  .info-image {
+}
+
+.info-image {
     border-radius: 15px;
     width: 100%;
     height: 220px;
     object-fit: cover;
     transition: transform 0.3s ease;
-  }
-  .info-image:hover {
+}
+
+.info-image:hover {
     transform: scale(1.03);
-  }
-  .info-link {
+}
+
+.info-link {
     text-decoration: none;
     color: inherit;
-  }
-  
+}
+
 /* Custom buttons */
 .custom-btn {
-    background-color: #d8a1c4 !important; /* muted pink */
+    background-color: #d8a1c4 !important;
+    /* muted pink */
     border: none;
     border-color: #c689b5;
     color: #fff !important;
     transition: background-color 0.3s ease;
-  }
-  
-  .custom-btn:hover {
+}
+
+.custom-btn:hover {
     background-color: #c689b5 !important;
     color: #fff !important;
-  }
-  
-  /* Fonts */
-  .cursive-heading {
+}
+
+/* Fonts */
+.cursive-heading {
     font-family: 'Dancing Script', cursive;
     color: #250a17;
     font-weight: 600;
-  }
-  .montserrat-text {
+}
+
+.montserrat-text {
     font-family: 'Montserrat', sans-serif;
     color: #7d5c69;
-  }
-  
-  /* Footer */
-  .footer {
+}
+
+/* Footer */
+.footer {
     background-color: #f7eaf0;
-  }
-  .social-icons a {
+}
+
+.social-icons a {
     transition: transform 0.3s ease, color 0.3s ease;
-  }
-  .social-icons a:hover {
+}
+
+.social-icons a:hover {
     color: #a66f8a;
     transform: scale(1.2);
-  }
-  
+}
+
+.decor-icon {
+    width: 40px;
+    height: auto;
+    opacity: 0.6;
+    margin-top: 10px;
+    display: block;
+}
