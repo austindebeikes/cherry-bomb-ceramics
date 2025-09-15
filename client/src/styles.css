@@ -151,16 +151,23 @@ body {
     color: #5a2a3e;
 }
 
-/* Make navbar vertically shorter */
+/* Keep navbar slim */
 .custom-navbar {
-    padding-top: 0.1rem;
-    padding-bottom: 0.1rem;
-}
+    padding-top: 0.3rem;
+    padding-bottom: 0.3rem;
+    min-height: 70px; /* controls total navbar height */
+    display: flex;
+    align-items: center; /* keep items vertically aligned */
+  }
+  
+  /* Keep logo inside navbar height */
+  .custom-navbar .navbar-brand img {
+    max-height: 165px;  /* adjust this number */
+    width: auto;
+    display: block;
+  }
+  
 
-.custom-navbar .navbar-brand img {
-    height: 40px;
-    /* smaller logo */
-}
 
 .custom-navbar .nav-link {
     padding-top: 0.25rem;

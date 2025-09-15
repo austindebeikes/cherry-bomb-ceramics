@@ -25,13 +25,12 @@ const AppNavbar = () => {
   const cartCount = cartItems.reduce((sum, item) => sum + item.quantity, 0);
 
   return (
-    <Navbar expand="lg" className="custom-navbar shadow-sm mb-4">
+    <Navbar expand="lg" style={{ backgroundColor: '#feebf2', }} className="custom-navbar shadow-sm mb-4">
       <Container>
         <Navbar.Brand as={Link} to="/">
           <img
             src="/images/CBC Logo.png"
             alt="Cherry Bomb Ceramics Logo"
-            style={{ height: "140px", objectFit: "contain" }}
           />
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
