@@ -9,7 +9,7 @@ import "react-toastify/dist/ReactToastify.css";
 import { CartProvider, useCart } from "./contexts/CartContext";
 
 // Import components
-import Homepage from ".components'Homepage";
+import Homepage from "./components/Homepage";
 import PetiteFruit from "./components/PetiteFruit";
 import TeaSet from "./components/TeaSet";
 import Vases from "./components/Vases";
