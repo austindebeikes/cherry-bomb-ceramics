@@ -9,7 +9,7 @@ import "react-toastify/dist/ReactToastify.css";
 import { CartProvider, useCart } from "./contexts/CartContext";
 
 // Import components
-import HomePage from "./components/HomePage";
+import Homepage from ".components'Homepage";
 import PetiteFruit from "./components/PetiteFruit";
 import TeaSet from "./components/TeaSet";
 import Vases from "./components/Vases";
@@ -113,7 +113,7 @@ function App() {
         <AppNavbar />
         <Routes>
           {/* Homepage separated by categories */}
-          <Route path="/" element={<HomePage products={products} />} />
+          <Route path="/" element={<Homepage products={products} />} />
 
           {/* Individual product details */}
           <Route path="/product/:id" element={<ProductDetails products={products} />} />
