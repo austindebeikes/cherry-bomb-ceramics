@@ -6,13 +6,13 @@ export default function CouCou() {
     return (
         <Section
             id="cou-cou"
-            title="Cou Cou Collection"
+            title="Cou Cou Collections"
             subtitle="This is prime space! Use it to elaborate on your attention-grabbing section title. Explain what this section is about, share some details, and give just the right amount of information to get the audience hooked."
             bg="bg-white"
         >
             <div className="row g-4">
                 <CollectionCard
-                    title="Playful Mugs"
+                    title="Playful Mug"
                     blurb="Rounded handles, cheeky glazes."
                     img="https://images.pexels.com/photos/2417857/pexels-photo-2417857.jpeg"
                 />
