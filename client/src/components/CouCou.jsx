@@ -17,7 +17,7 @@ export default function CouCou() {
                     img="https://images.pexels.com/photos/2417857/pexels-photo-2417857.jpeg"
                 />
                 <CollectionCard
-                    title="Snack Plates"
+                    title="Snack Plate"
                     blurb="Weekend brunch energy."
                     img="https://images.pexels.com/photos/3094018/pexels-photo-3094018.jpeg"
                 />
